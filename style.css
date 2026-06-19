@@ -1,105 +1,259 @@
-<!--
+/*
 ============================================================
- Program name: thankyou.html
+ Program name: style.css
  Author:       Hassan Ogunlana
  Date created: 06/15/2026
  Date last edited: 06/19/2026
  Version:      1.0
- Description:  Confirmation page shown after the patient
-               registration form on index.html is submitted.
-               Reuses the same banner, footer, and stylesheet;
-               displays a thank-you message in place of the form.
+ Description:  External stylesheet for index.html
+               (Bayou City Medical patient registration).
+               Defines the color theme, fonts, layout
+               spacing, form table styling, and footer.
 ============================================================
--->
-<!DOCTYPE html>
-<html lang="en">
+*/
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bayou City Medical - Thank You</title>
-  <!-- Same external stylesheet as the form page -->
-  <link rel="stylesheet" href="style.css">
-</head>
+/* ===== TAG (ELEMENT) SELECTORS ===== */
 
-<body>
+/* Non-default page background + body font and color */
+body {
+  background-color: #eef3f6;          /* soft blue-gray, not default white */
+  font-family: Verdana, Geneva, sans-serif;
+  color: #222222;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
 
-  <!-- ======================================================= -->
-  <!-- DIV #1 - TOP / BANNER (same as index.html)              -->
-  <!-- ======================================================= -->
-  <div id="header" class="banner">
-    <img src="logo.png" alt="Bayou City Medical logo" class="logo" width="80" height="80">
+/* Heading font + color (not default) */
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #ffffff;
+  font-size: 28px;
+  margin: 0;
+}
 
-    <div class="banner-text">
-      <h1>Bayou City Medical</h1>
-      <p class="tagline">New Patient Registration</p>
-    </div>
+/* Form section heading rows */
+th {
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #c8102e;          /* scarlet */
+  color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+  padding: 8px 12px;
+}
 
-    <!-- Dynamic day and date written by in-line JavaScript -->
-    <p class="banner-date">today is: <span id="todayDate"></span></p>
-    <script>
-      // Build a readable date like: Friday, June 19th, 2026
-      var today = new Date();
-      var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday",
-                      "Thursday", "Friday", "Saturday"];
-      var monthNames = ["January", "February", "March", "April", "May", "June",
-                        "July", "August", "September", "October", "November", "December"];
+/* Table cells */
+td {
+  padding: 8px 10px;
+  vertical-align: middle;
+}
 
-      function ordinal(n) {
-        if (n > 3 && n < 21) return n + "th";
-        switch (n % 10) {
-          case 1: return n + "st";
-          case 2: return n + "nd";
-          case 3: return n + "rd";
-          default: return n + "th";
-        }
-      }
+/* Inputs, dropdown and text area share a consistent look */
+input,
+select,
+textarea {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  color: #222222;
+  border: 1px solid #b0b8be;
+  border-radius: 3px;
+  padding: 5px 7px;
+  background-color: #ffffff;
+}
 
-      var dateText = dayNames[today.getDay()] + ", " +
-                     monthNames[today.getMonth()] + " " +
-                     ordinal(today.getDate()) + ", " +
-                     today.getFullYear();
-      document.getElementById("todayDate").textContent = dateText;
-    </script>
-  </div>
-  <!-- END DIV #1 -->
+textarea {
+  resize: vertical;
+}
 
+/* ===== HYPERLINK + VISITED LINK COLORS ===== */
+a:link {
+  color: #c8102e;                     /* unvisited - scarlet */
+  text-decoration: none;
+}
 
-  <!-- ======================================================= -->
-  <!-- DIV #2 - MIDDLE / MESSAGE (replaces the form)           -->
-  <!-- ======================================================= -->
-  <div id="main" class="content">
-    <div class="thankyou-box">
-      <h2>Thank you for your submission.</h2>
-      <p>Your registration has been received by Bayou City Medical.</p>
-      <p><a href="index.html">Return to the registration form</a></p>
-    </div>
-  </div>
-  <!-- END DIV #2 -->
+a:visited {
+  color: #7a1020;                     /* visited - darker maroon */
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 
-  <!-- ======================================================= -->
-  <!-- DIV #3 - BOTTOM / FOOTER (same as index.html)           -->
-  <!-- ======================================================= -->
-  <div id="footer" class="site-footer">
-    <span class="footer-name">Bayou City Medical</span>
+/* ===== ID SELECTORS (unique page regions) ===== */
 
-    <!-- At least one clickable element in the footer -->
-    <button type="button" class="contact-btn"
-            onclick="window.location.href='mailto:info@bayoucitymedical.example';">
-      Contact Us
-    </button>
+/* DIV #1 - banner */
+#header {
+  background-color: #c8102e;
+  color: #ffffff;
+  padding: 18px 30px;
+  border-bottom: 4px solid #7a1020;
+}
 
-    <span class="footer-links">
-      <a href="https://www.facebook.com">Facebook</a> |
-      <a href="https://www.x.com">X</a> |
-      <a href="https://www.instagram.com">Instagram</a>
-    </span>
+/* DIV #2 - main content area */
+#main {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 0 20px;
+}
 
-    <span class="footer-addr">PO BOX 18881 &nbsp; Sugar Land, TX 77496</span>
-  </div>
-  <!-- END DIV #3 -->
+/* DIV #3 - footer */
+#footer {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  padding: 16px 30px;
+  margin-top: 30px;
+}
 
-</body>
-</html>
-<!-- ============ End of thankyou.html ============ -->
+
+/* ===== CLASS SELECTORS (reusable styles) ===== */
+
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logo {
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.banner-text {
+  flex-grow: 1;
+}
+
+.tagline {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #ffe3e7;
+}
+
+.banner-date {
+  font-size: 13px;
+  color: #ffe3e7;
+  margin: 0;
+}
+
+.instructions {
+  background-color: #fff6d6;
+  border-left: 4px solid #c8102e;
+  padding: 10px 14px;
+  font-size: 13px;
+}
+
+.form-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border: 1px solid #d5dbe0;
+  margin-bottom: 22px;
+}
+
+.section-head {
+  letter-spacing: 0.5px;
+}
+
+/* Right-align the field labels so inputs line up */
+.lbl {
+  text-align: right;
+  font-weight: bold;
+  color: #333333;
+  white-space: nowrap;
+  width: 1%;
+}
+
+/* Spacing for checkbox / radio groups */
+.choices label {
+  margin-right: 18px;
+}
+
+.button-row {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.btn {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 22px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Submit - scarlet, primary action */
+.btn-submit {
+  background-color: #c8102e;
+  color: #ffffff;
+}
+
+/* Clear / reset - gray, secondary action */
+.btn-clear {
+  background-color: #d9dee2;
+  color: #333333;
+}
+
+.footer-name {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.footer-links {
+  margin: 0 20px;
+}
+
+.footer-addr {
+  font-size: 12px;
+  color: #cccccc;
+}
+
+.contact-btn {
+  background-color: #c8102e;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+/* ===== NAME SELECTORS (target form fields by name attribute) ===== */
+
+/* Make the obscured SSN field stand out slightly */
+input[name="ssn"] {
+  background-color: #fff6f7;
+}
+
+/* Highlight the two password fields */
+input[name="password"],
+input[name="confirmPassword"] {
+  background-color: #fff6f7;
+}
+
+/* Style the health slider by name */
+input[name="health"] {
+  vertical-align: middle;
+}
+
+
+/* ===== THANK-YOU PAGE (thankyou.html) ===== */
+.thankyou-box {
+  background-color: #ffffff;
+  border: 1px solid #d5dbe0;
+  border-top: 5px solid #c8102e;
+  border-radius: 4px;
+  padding: 40px 30px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.thankyou-box h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #c8102e;
+  font-size: 24px;
+  margin-top: 0;
+}
