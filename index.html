@@ -1,0 +1,338 @@
+<!--
+============================================================
+ Program name: index.html
+ Author:       Hassan Ogunlana
+ Date created: 06/14/2026
+ Date last edited: 06/18/2026
+ Version:      1.0
+ Description:  New patient registration / medical intake form
+               for Bayou City Medical. Collects demographic
+               and basic health information. Client-side only;
+               on submit it routes to thankyou.html.
+============================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bayou City Medical - New Patient Registration</title>
+  <!-- External stylesheet (must live in the same folder) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ======================================================= -->
+  <!-- DIV #1 - TOP / BANNER                                    -->
+  <!-- ======================================================= -->
+  <div id="header" class="banner">
+    <img src="logo.png" alt="Bayou City Medical logo" class="logo" width="80" height="80">
+
+    <div class="banner-text">
+      <h1>Bayou City Medical</h1>
+      <p class="tagline">New Patient Registration</p>
+    </div>
+
+    <!-- Dynamic day and date written by in-line JavaScript -->
+    <p class="banner-date">today is: <span id="todayDate"></span></p>
+    <script>
+      // Build a readable date like: Friday, June 19th, 2026
+      var today = new Date();
+      var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday",
+                      "Thursday", "Friday", "Saturday"];
+      var monthNames = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+
+      function ordinal(n) {
+        if (n > 3 && n < 21) return n + "th";
+        switch (n % 10) {
+          case 1: return n + "st";
+          case 2: return n + "nd";
+          case 3: return n + "rd";
+          default: return n + "th";
+        }
+      }
+
+      var dateText = dayNames[today.getDay()] + ", " +
+                     monthNames[today.getMonth()] + " " +
+                     ordinal(today.getDate()) + ", " +
+                     today.getFullYear();
+      document.getElementById("todayDate").textContent = dateText;
+    </script>
+  </div>
+  <!-- END DIV #1 -->
+
+
+  <!-- ======================================================= -->
+  <!-- DIV #2 - MIDDLE / MAIN FORM                              -->
+  <!-- ======================================================= -->
+  <div id="main" class="content">
+
+    <p class="instructions">
+      Please complete all fields below. Required fields are marked with an asterisk (*).
+    </p>
+
+    <!-- Client-side only: no method attribute; routes to thankyou.html -->
+    <form id="registerForm" name="registerForm" action="thankyou.html">
+
+      <!-- ============ PATIENT INFORMATION ============ -->
+      <table class="form-table">
+        <tr>
+          <th colspan="6" class="section-head">Patient Information</th>
+        </tr>
+
+        <!-- First / Middle Initial / Last on one line -->
+        <tr>
+          <td class="lbl"><label for="firstName">First Name: *</label></td>
+          <td><input type="text" id="firstName" name="firstName" maxlength="30" size="18" required></td>
+
+          <td class="lbl"><label for="middleInitial">M.I.:</label></td>
+          <td><input type="text" id="middleInitial" name="middleInitial" maxlength="1" size="2"></td>
+
+          <td class="lbl"><label for="lastName">Last Name: *</label></td>
+          <td><input type="text" id="lastName" name="lastName" maxlength="30" size="18" required></td>
+        </tr>
+
+        <!-- Date of Birth / SSN -->
+        <tr>
+          <td class="lbl"><label for="dob">Date of Birth: *</label></td>
+          <td><input type="text" id="dob" name="dob" maxlength="10" size="12"
+                     placeholder="MM/DD/YYYY" required></td>
+
+          <td class="lbl"><label for="ssn">SSN:</label></td>
+          <td colspan="3"><input type="password" id="ssn" name="ssn" maxlength="11" size="14"
+                     placeholder="9 to 11 digits"></td>
+        </tr>
+      </table>
+
+
+      <!-- ============ CONTACT / ADDRESS ============ -->
+      <table class="form-table">
+        <tr>
+          <th colspan="6" class="section-head">Contact &amp; Address</th>
+        </tr>
+
+        <tr>
+          <td class="lbl"><label for="address1">Address Line 1:</label></td>
+          <td colspan="5"><input type="text" id="address1" name="address1" maxlength="30" size="40"></td>
+        </tr>
+
+        <tr>
+          <td class="lbl"><label for="address2">Address Line 2:</label></td>
+          <td colspan="5"><input type="text" id="address2" name="address2" maxlength="30" size="40"></td>
+        </tr>
+
+        <!-- City / State / Zip on one line -->
+        <tr>
+          <td class="lbl"><label for="city">City:</label></td>
+          <td><input type="text" id="city" name="city" maxlength="30" size="18"></td>
+
+          <td class="lbl"><label for="state">State:</label></td>
+          <td>
+            <select id="state" name="state">
+              <option value="">-- Select --</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="PR">Puerto Rico</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </td>
+
+          <td class="lbl"><label for="zip">Zip Code:</label></td>
+          <td><input type="text" id="zip" name="zip" maxlength="10" size="11"
+                     placeholder="5 to 10 digits"></td>
+        </tr>
+
+        <!-- Email / Phone -->
+        <tr>
+          <td class="lbl"><label for="email">Email: *</label></td>
+          <td colspan="2"><input type="email" id="email" name="email" size="28"
+                     placeholder="name@domain.tld" required></td>
+
+          <td class="lbl"><label for="phone">Phone:</label></td>
+          <td colspan="2"><input type="tel" id="phone" name="phone" size="16"
+                     placeholder="(123) 456-7890"></td>
+        </tr>
+      </table>
+
+
+      <!-- ============ MEDICAL HISTORY ============ -->
+      <table class="form-table">
+        <tr>
+          <th colspan="6" class="section-head">Medical History</th>
+        </tr>
+
+        <!-- Text area: at least 3 rows by 50 columns -->
+        <tr>
+          <td class="lbl"><label for="symptoms">Describe your current symptoms:</label></td>
+          <td colspan="5">
+            <textarea id="symptoms" name="symptoms" rows="4" cols="50"
+                      placeholder="Briefly describe how you are feeling..."></textarea>
+          </td>
+        </tr>
+
+        <!-- Check boxes: one section, five choices -->
+        <tr>
+          <td class="lbl">Check all that apply<br>(illnesses you have had):</td>
+          <td colspan="5" class="choices">
+            <label><input type="checkbox" name="priorIllness" value="chickenpox"> Chicken Pox</label>
+            <label><input type="checkbox" name="priorIllness" value="measles"> Measles</label>
+            <label><input type="checkbox" name="priorIllness" value="covid19"> Covid-19</label>
+            <label><input type="checkbox" name="priorIllness" value="smallpox"> Small Pox</label>
+            <label><input type="checkbox" name="priorIllness" value="tetanus"> Tetanus</label>
+          </td>
+        </tr>
+
+        <!-- Radio set 1: Gender -->
+        <tr>
+          <td class="lbl">Gender:</td>
+          <td colspan="5" class="choices">
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+            <label><input type="radio" name="gender" value="other"> Other</label>
+          </td>
+        </tr>
+
+        <!-- Radio set 2: Vaccinated -->
+        <tr>
+          <td class="lbl">Have you been vaccinated?</td>
+          <td colspan="5" class="choices">
+            <label><input type="radio" name="vaccinated" value="yes"> Yes</label>
+            <label><input type="radio" name="vaccinated" value="no"> No</label>
+          </td>
+        </tr>
+
+        <!-- Radio set 3: Insurance -->
+        <tr>
+          <td class="lbl">Do you have insurance?</td>
+          <td colspan="5" class="choices">
+            <label><input type="radio" name="insurance" value="yes"> Yes</label>
+            <label><input type="radio" name="insurance" value="no"> No</label>
+          </td>
+        </tr>
+
+        <!-- Slide bar: 1 to 10 -->
+        <tr>
+          <td class="lbl"><label for="health">Rate your overall health:<br>
+              (1 = poor, 10 = feeling good)</label></td>
+          <td colspan="5" class="choices">
+            1
+            <input type="range" id="health" name="health" min="1" max="10" value="5">
+            10
+          </td>
+        </tr>
+      </table>
+
+
+      <!-- ============ ACCOUNT SET-UP ============ -->
+      <table class="form-table">
+        <tr>
+          <th colspan="6" class="section-head">Account Set-Up</th>
+        </tr>
+
+        <!-- Desired User ID, separate from email -->
+        <tr>
+          <td class="lbl"><label for="userId">Desired User ID: *</label></td>
+          <td colspan="5"><input type="text" id="userId" name="userId" maxlength="20" size="22"
+                     placeholder="up to 20 characters" required></td>
+        </tr>
+
+        <!-- Two password fields (obscured) -->
+        <tr>
+          <td class="lbl"><label for="password">Password: *</label></td>
+          <td colspan="2"><input type="password" id="password" name="password"
+                     maxlength="30" size="20" required></td>
+
+          <td class="lbl"><label for="confirmPassword">Re-enter Password: *</label></td>
+          <td colspan="2"><input type="password" id="confirmPassword" name="confirmPassword"
+                     maxlength="30" size="20" required></td>
+        </tr>
+      </table>
+
+
+      <!-- ============ BUTTONS ============ -->
+      <div class="button-row">
+        <input type="reset" class="btn btn-clear" value="CLEAR AND START OVER">
+        <input type="submit" class="btn btn-submit" value="Submit">
+      </div>
+
+    </form>
+  </div>
+  <!-- END DIV #2 -->
+
+
+  <!-- ======================================================= -->
+  <!-- DIV #3 - BOTTOM / FOOTER                                 -->
+  <!-- ======================================================= -->
+  <div id="footer" class="site-footer">
+    <span class="footer-name">Bayou City Medical</span>
+
+    <!-- At least one clickable element in the footer -->
+    <button type="button" class="contact-btn"
+            onclick="window.location.href='mailto:info@bayoucitymedical.example';">
+      Contact Us
+    </button>
+
+    <span class="footer-links">
+      <a href="https://www.facebook.com">Facebook</a> |
+      <a href="https://www.x.com">X</a> |
+      <a href="https://www.instagram.com">Instagram</a>
+    </span>
+
+    <span class="footer-addr">PO BOX 18881 &nbsp; Sugar Land, TX 77496</span>
+  </div>
+  <!-- END DIV #3 -->
+
+</body>
+</html>
+<!-- ============ End of index.html ============ -->
