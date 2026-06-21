@@ -1,5 +1,5 @@
 <!--
-============================================================
+
  Program name: index.html
  Author:       Hassan Ogunlana
  Date created: 06/14/2026
@@ -9,7 +9,7 @@
                for Bayou City Medical. Collects demographic
                and basic health information. Client-side only;
                on submit it routes to thankyou.html.
-============================================================
+
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -24,9 +24,7 @@
 
 <body>
 
-  <!-- ======================================================= -->
-  <!-- DIV #1 - TOP / BANNER                                    -->
-  <!-- ======================================================= -->
+
   <div id="header" class="banner">
     <img src="logo.png" alt="Bayou City Medical logo" class="logo" width="80" height="80">
 
@@ -35,10 +33,9 @@
       <p class="tagline">New Patient Registration</p>
     </div>
 
-    <!-- Dynamic day and date written by in-line JavaScript -->
     <p class="banner-date">today is: <span id="todayDate"></span></p>
     <script>
-      // Build a readable date like: Friday, June 19th, 2026
+
       var today = new Date();
       var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday",
                       "Thursday", "Friday", "Saturday"];
@@ -62,28 +59,25 @@
       document.getElementById("todayDate").textContent = dateText;
     </script>
   </div>
-  <!-- END DIV #1 -->
+ 
 
 
-  <!-- ======================================================= -->
-  <!-- DIV #2 - MIDDLE / MAIN FORM                              -->
-  <!-- ======================================================= -->
   <div id="main" class="content">
 
     <p class="instructions">
       Please complete all fields below. Required fields are marked with an asterisk (*).
     </p>
 
-    <!-- Client-side only: no method attribute; routes to thankyou.html -->
+    
     <form id="registerForm" name="registerForm" action="thankyou.html">
 
-      <!-- ============ PATIENT INFORMATION ============ -->
+      
       <table class="form-table">
         <tr>
           <th colspan="6" class="section-head">Patient Information</th>
         </tr>
 
-        <!-- First / Middle Initial / Last on one line -->
+        
         <tr>
           <td class="lbl"><label for="firstName">First Name: *</label></td>
           <td><input type="text" id="firstName" name="firstName" maxlength="30" size="18" required></td>
@@ -95,7 +89,7 @@
           <td><input type="text" id="lastName" name="lastName" maxlength="30" size="18" required></td>
         </tr>
 
-        <!-- Date of Birth / SSN -->
+        
         <tr>
           <td class="lbl"><label for="dob">Date of Birth: *</label></td>
           <td><input type="text" id="dob" name="dob" maxlength="10" size="12"
@@ -108,8 +102,8 @@
       </table>
 
 
-      <!-- ============ CONTACT / ADDRESS ============ -->
-      <table class="form-table">
+      
+        <table class="form-table">
         <tr>
           <th colspan="6" class="section-head">Contact &amp; Address</th>
         </tr>
@@ -122,7 +116,7 @@
         <tr>
           <td class="lbl"><label for="address2">Address Line 2:</label></td>
           <td colspan="5"><input type="text" id="address2" name="address2" maxlength="30" size="40"></td>
-        </tr>
+         </tr>
 
         <!-- City / State / Zip on one line -->
         <tr>
@@ -193,7 +187,7 @@
                      placeholder="5 to 10 digits"></td>
         </tr>
 
-        <!-- Email / Phone -->
+        
         <tr>
           <td class="lbl"><label for="email">Email: *</label></td>
           <td colspan="2"><input type="email" id="email" name="email" size="28"
@@ -206,13 +200,13 @@
       </table>
 
 
-      <!-- ============ MEDICAL HISTORY ============ -->
+   
       <table class="form-table">
         <tr>
           <th colspan="6" class="section-head">Medical History</th>
         </tr>
 
-        <!-- Text area: at least 3 rows by 50 columns -->
+
         <tr>
           <td class="lbl"><label for="symptoms">Describe your current symptoms:</label></td>
           <td colspan="5">
@@ -221,7 +215,7 @@
           </td>
         </tr>
 
-        <!-- Check boxes: one section, five choices -->
+        
         <tr>
           <td class="lbl">Check all that apply<br>(illnesses you have had):</td>
           <td colspan="5" class="choices">
@@ -233,7 +227,7 @@
           </td>
         </tr>
 
-        <!-- Radio set 1: Gender -->
+        
         <tr>
           <td class="lbl">Gender:</td>
           <td colspan="5" class="choices">
@@ -243,7 +237,7 @@
           </td>
         </tr>
 
-        <!-- Radio set 2: Vaccinated -->
+       
         <tr>
           <td class="lbl">Have you been vaccinated?</td>
           <td colspan="5" class="choices">
@@ -252,7 +246,7 @@
           </td>
         </tr>
 
-        <!-- Radio set 3: Insurance -->
+       
         <tr>
           <td class="lbl">Do you have insurance?</td>
           <td colspan="5" class="choices">
@@ -260,8 +254,7 @@
             <label><input type="radio" name="insurance" value="no"> No</label>
           </td>
         </tr>
-
-        <!-- Slide bar: 1 to 10 -->
+       
         <tr>
           <td class="lbl"><label for="health">Rate your overall health:<br>
               (1 = poor, 10 = feeling good)</label></td>
@@ -274,20 +267,20 @@
       </table>
 
 
-      <!-- ============ ACCOUNT SET-UP ============ -->
+      
       <table class="form-table">
         <tr>
           <th colspan="6" class="section-head">Account Set-Up</th>
         </tr>
 
-        <!-- Desired User ID, separate from email -->
+       
         <tr>
           <td class="lbl"><label for="userId">Desired User ID: *</label></td>
           <td colspan="5"><input type="text" id="userId" name="userId" maxlength="20" size="22"
                      placeholder="up to 20 characters" required></td>
         </tr>
 
-        <!-- Two password fields (obscured) -->
+     
         <tr>
           <td class="lbl"><label for="password">Password: *</label></td>
           <td colspan="2"><input type="password" id="password" name="password"
@@ -300,7 +293,7 @@
       </table>
 
 
-      <!-- ============ BUTTONS ============ -->
+   
       <div class="button-row">
         <input type="reset" class="btn btn-clear" value="CLEAR AND START OVER">
         <input type="submit" class="btn btn-submit" value="Submit">
@@ -308,16 +301,10 @@
 
     </form>
   </div>
-  <!-- END DIV #2 -->
-
-
-  <!-- ======================================================= -->
-  <!-- DIV #3 - BOTTOM / FOOTER                                 -->
-  <!-- ======================================================= -->
+ 
   <div id="footer" class="site-footer">
     <span class="footer-name">Bayou City Medical</span>
 
-    <!-- At least one clickable element in the footer -->
     <button type="button" class="contact-btn"
             onclick="window.location.href='mailto:info@bayoucitymedical.example';">
       Contact Us
@@ -331,8 +318,7 @@
 
     <span class="footer-addr">PO BOX 18881 &nbsp; Sugar Land, TX 77496</span>
   </div>
-  <!-- END DIV #3 -->
+
 
 </body>
 </html>
-<!-- ============ End of index.html ============ -->
