@@ -1,5 +1,5 @@
 /*
-============================================================
+
  Program name: style.css
  Author:       Hassan Ogunlana
  Date created: 06/15/2026
@@ -9,22 +9,22 @@
                (Bayou City Medical patient registration).
                Defines the color theme, fonts, layout
                spacing, form table styling, and footer.
-============================================================
+
 */
 
-/* ===== TAG (ELEMENT) SELECTORS ===== */
 
-/* Non-default page background + body font and color */
+
+
 body {
-  background-color: #eef3f6;          /* soft blue-gray, not default white */
+  background-color: #eef3f6;          
   font-family: Verdana, Geneva, sans-serif;
-  color: #222222;
+   color: #222222;
   font-size: 14px;
   margin: 0;
   padding: 0;
 }
 
-/* Heading font + color (not default) */
+
 h1 {
   font-family: Georgia, "Times New Roman", serif;
   color: #ffffff;
@@ -32,28 +32,28 @@ h1 {
   margin: 0;
 }
 
-/* Form section heading rows */
+
 th {
-  font-family: Georgia, "Times New Roman", serif;
-  background-color: #c8102e;          /* scarlet */
+   font-family: Georgia, "Times New Roman", serif;
+  background-color: #c8102e;         
   color: #ffffff;
   text-align: left;
   font-size: 16px;
   padding: 8px 12px;
 }
 
-/* Table cells */
+ 
 td {
   padding: 8px 10px;
   vertical-align: middle;
 }
 
-/* Inputs, dropdown and text area share a consistent look */
+ 
 input,
 select,
 textarea {
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: 14px;
+   font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
   color: #222222;
   border: 1px solid #b0b8be;
   border-radius: 3px;
@@ -65,14 +65,14 @@ textarea {
   resize: vertical;
 }
 
-/* ===== HYPERLINK + VISITED LINK COLORS ===== */
+
 a:link {
-  color: #c8102e;                     /* unvisited - scarlet */
-  text-decoration: none;
+  color: #c8102e;                    
+   text-decoration: none;
 }
 
 a:visited {
-  color: #7a1020;                     /* visited - darker maroon */
+  color: #7a1020;                     
 }
 
 a:hover {
@@ -80,9 +80,9 @@ a:hover {
 }
 
 
-/* ===== ID SELECTORS (unique page regions) ===== */
 
-/* DIV #1 - banner */
+
+
 #header {
   background-color: #c8102e;
   color: #ffffff;
@@ -90,14 +90,14 @@ a:hover {
   border-bottom: 4px solid #7a1020;
 }
 
-/* DIV #2 - main content area */
+
 #main {
   max-width: 900px;
-  margin: 25px auto;
+   margin: 25px auto;
   padding: 0 20px;
 }
 
-/* DIV #3 - footer */
+
 #footer {
   background-color: #2a2a2a;
   color: #ffffff;
@@ -106,10 +106,10 @@ a:hover {
 }
 
 
-/* ===== CLASS SELECTORS (reusable styles) ===== */
+
 
 .banner {
-  display: flex;
+   display: flex;
   align-items: center;
   gap: 18px;
 }
@@ -138,7 +138,7 @@ a:hover {
 .instructions {
   background-color: #fff6d6;
   border-left: 4px solid #c8102e;
-  padding: 10px 14px;
+   padding: 10px 14px;
   font-size: 13px;
 }
 
@@ -154,7 +154,7 @@ a:hover {
   letter-spacing: 0.5px;
 }
 
-/* Right-align the field labels so inputs line up */
+
 .lbl {
   text-align: right;
   font-weight: bold;
@@ -163,7 +163,7 @@ a:hover {
   width: 1%;
 }
 
-/* Spacing for checkbox / radio groups */
+
 .choices label {
   margin-right: 18px;
 }
@@ -184,13 +184,13 @@ a:hover {
   cursor: pointer;
 }
 
-/* Submit - scarlet, primary action */
+
 .btn-submit {
   background-color: #c8102e;
   color: #ffffff;
 }
 
-/* Clear / reset - gray, secondary action */
+
 .btn-clear {
   background-color: #d9dee2;
   color: #333333;
@@ -221,26 +221,26 @@ a:hover {
 }
 
 
-/* ===== NAME SELECTORS (target form fields by name attribute) ===== */
 
-/* Make the obscured SSN field stand out slightly */
+
+
 input[name="ssn"] {
   background-color: #fff6f7;
 }
 
-/* Highlight the two password fields */
+
 input[name="password"],
 input[name="confirmPassword"] {
   background-color: #fff6f7;
 }
 
-/* Style the health slider by name */
+
 input[name="health"] {
   vertical-align: middle;
 }
 
 
-/* ===== THANK-YOU PAGE (thankyou.html) ===== */
+
 .thankyou-box {
   background-color: #ffffff;
   border: 1px solid #d5dbe0;
