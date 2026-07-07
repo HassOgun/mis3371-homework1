@@ -256,3 +256,41 @@ input[name="health"] {
   font-size: 24px;
   margin-top: 0;
 }
+
+
+/* =====================================================================
+   Homework 3 additions
+   ===================================================================== */
+
+/* small message that sits under each field. space is reserved with
+   min-height so the form does not "jump" when a message appears */
+.err {
+  display: block;
+  min-height: 16px;
+  margin-top: 3px;
+  color: #c8102e;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* the Validate button (blue, matches the old Review button color) */
+.btn-validate {
+  background-color: #2a6db5;
+  color: #ffffff;
+}
+
+/* the overall message under the buttons after Validate is pressed */
+.validate-msg {
+  min-height: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.validate-msg.ok {
+  color: #1a7f37;
+}
+
+.validate-msg.bad {
+  color: #c8102e;
+}
