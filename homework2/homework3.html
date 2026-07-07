@@ -90,10 +90,10 @@
               <span id="dobErr" class="err"></span></td>
 
           <td class="lbl"><label for="ssn">ID / SSN:</label></td>
-          <td colspan="3"><input type="text" id="ssn" name="ssn" maxlength="11" size="14"
+          <td colspan="3"><input type="password" id="ssn" name="ssn" maxlength="11" size="14"
                      pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"
                      placeholder="000-00-0000"
-                     title="Optional. 9 digits. The dashes are added for you as you type."
+                     title="Optional. 9 digits only. Entry is hidden and dashes are added automatically."
                      oninput="formatSSN(this)">
               <span id="ssnErr" class="err"></span></td>
         </tr>
@@ -324,6 +324,7 @@
       <!-- Validate replaces the old Submit. The real Submit stays hidden until validateForm() finds no errors. -->
       <div class="button-row">
         <input type="reset" class="btn btn-clear" value="START OVER">
+        <input type="button" class="btn btn-review" value="Review" onclick="reviewForm()">
         <input type="button" class="btn btn-validate" value="Validate" onclick="validateForm()">
         <input type="submit" id="submitBtn" class="btn btn-submit" value="Submit" style="display:none;">
       </div>
@@ -331,6 +332,13 @@
       <div id="validateMsg" class="validate-msg"></div>
 
     </form>
+
+
+    <!-- ===== Review area (filled in by JavaScript when Review is pressed) ===== -->
+    <div id="reviewArea" class="review-area" style="display:none;">
+      <h2 class="review-title">PLEASE REVIEW THIS INFORMATION</h2>
+      <div id="reviewOutput"></div>
+    </div>
 
   </div>
 
