@@ -258,96 +258,39 @@ input[name="health"] {
 }
 
 
-
 /* =====================================================================
-   Homework 2 additions
+   Homework 3 additions
    ===================================================================== */
 
-/* live validation feedback on the inputs (from the lecture) */
-input:user-invalid,
-select:user-invalid {
-  border: 2px solid #c8102e;
-  background-color: #fdeef0;
-}
-
-/* the value shown next to the health slider */
-.slider-value {
-  font-weight: bold;
+/* small message that sits under each field. space is reserved with
+   min-height so the form does not "jump" when a message appears */
+.err {
+  display: block;
+  min-height: 16px;
+  margin-top: 3px;
   color: #c8102e;
-}
-
-/* the live "passwords match" message */
-.pw-message {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
 }
 
-.pw-ok {
-  color: #1a7f37;
-}
-
-.pw-bad {
-  color: #c8102e;
-}
-
-/* the new Review button */
-.btn-review {
+/* the Validate button (blue, matches the old Review button color) */
+.btn-validate {
   background-color: #2a6db5;
   color: #ffffff;
 }
 
-/* the review area that appears below the form */
-.review-area {
-  background-color: #ffffff;
-  border: 1px solid #d5dbe0;
-  border-top: 5px solid #c8102e;
-  border-radius: 4px;
-  padding: 20px 25px;
-  margin-top: 25px;
-}
-
-.review-title {
-  font-family: Georgia, "Times New Roman", serif;
-  color: #c8102e;
-  font-size: 22px;
-  margin-top: 0;
-}
-
-.review-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.review-table th {
-  background-color: #c8102e;
-  color: #ffffff;
-  text-align: left;
-  padding: 6px 10px;
-  font-size: 15px;
-}
-
-.review-table td {
-  padding: 5px 10px;
-  border-bottom: 1px solid #eaeaea;
-  vertical-align: top;
-}
-
-.r-label {
+/* the overall message under the buttons after Validate is pressed */
+.validate-msg {
+  min-height: 20px;
+  margin-bottom: 20px;
+  text-align: center;
   font-weight: bold;
-  width: 220px;
 }
 
-.r-value {
-  width: 320px;
-}
-
-/* green = pass, red = error, in the status column */
-.r-status.pass {
+.validate-msg.ok {
   color: #1a7f37;
-  font-weight: bold;
 }
 
-.r-status.fail {
+.validate-msg.bad {
   color: #c8102e;
-  font-weight: bold;
 }
