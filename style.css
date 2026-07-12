@@ -3,11 +3,10 @@
  Program name: style.css
  Author:       Hassan Ogunlana
  Date created: 06/15/2026
- Date last edited: 06/19/2026
+ Date last edited: 07/11/2026
  Version:      1.0
  Description:  External stylesheet for index.html
                (Bayou City Medical patient registration).
-               
 
 */
 
@@ -258,12 +257,9 @@ input[name="health"] {
 }
 
 
-/* =====================================================================
-   Homework 3 additions
-   ===================================================================== */
+ 
 
-/* small message that sits under each field. space is reserved with
-   min-height so the form does not "jump" when a message appears */
+ 
 .err {
   display: block;
   min-height: 16px;
@@ -273,13 +269,12 @@ input[name="health"] {
   font-weight: bold;
 }
 
-/* the Validate button (blue, matches the old Review button color) */
+ 
 .btn-validate {
   background-color: #2a6db5;
   color: #ffffff;
 }
-
-/* the overall message under the buttons after Validate is pressed */
+ 
 .validate-msg {
   min-height: 20px;
   margin-bottom: 20px;
@@ -293,4 +288,65 @@ input[name="health"] {
 
 .validate-msg.bad {
   color: #c8102e;
+}
+
+ 
+
+ 
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+ 
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;   /* keep the side padding from overflowing */
+  z-index: 1000;
+}
+
+ 
+body {
+  padding-bottom: 90px;
+}
+
+ 
+.resources-box {
+  background-color: #ffffff;
+  border: 1px solid #d5dbe0;
+  border-left: 4px solid #2a6db5;
+  padding: 12px 16px;
+  margin-bottom: 22px;
+}
+
+.resources-box h3 {
+  margin: 0 0 6px 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1c5a86;
+  font-size: 18px;
+}
+
+ 
+.banner-greeting {
+  margin: 8px 0 0 0;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+ 
+.not-me-row {
+  margin: 6px 0 0 0;
+  font-size: 13px;
+  color: #ffe3e7;
+}
+
+ 
+.remember-row {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 13px;
 }
