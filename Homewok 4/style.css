@@ -1,0 +1,352 @@
+/*
+
+ Program name: style.css
+ Author:       Hassan Ogunlana
+ Date created: 06/15/2026
+ Date last edited: 07/11/2026
+ Version:      1.0
+ Description:  External stylesheet for index.html
+               (Bayou City Medical patient registration).
+
+*/
+
+
+
+
+body {
+  background-color: #eef3f6;          
+  font-family: Verdana, Geneva, sans-serif;
+   color: #222222;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #ffffff;
+  font-size: 28px;
+  margin: 0;
+}
+
+
+th {
+   font-family: Georgia, "Times New Roman", serif;
+  background-color: #c8102e;         
+  color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+  padding: 8px 12px;
+}
+
+ 
+td {
+  padding: 8px 10px;
+  vertical-align: middle;
+}
+
+ 
+input,
+select,
+textarea {
+   font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+  color: #222222;
+  border: 1px solid #b0b8be;
+  border-radius: 3px;
+  padding: 5px 7px;
+  background-color: #ffffff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+a:link {
+  color: #c8102e;                    
+   text-decoration: none;
+}
+
+a:visited {
+  color: #7a1020;                     
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+#header {
+  background-color: #c8102e;
+  color: #ffffff;
+  padding: 18px 30px;
+  border-bottom: 4px solid #7a1020;
+}
+
+
+#main {
+  max-width: 900px;
+   margin: 25px auto;
+  padding: 0 20px;
+}
+
+
+#footer {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  padding: 16px 30px;
+  margin-top: 30px;
+}
+
+
+
+
+.banner {
+   display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logo {
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.banner-text {
+  flex-grow: 1;
+}
+
+.tagline {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #ffe3e7;
+}
+
+.banner-date {
+  font-size: 13px;
+  color: #ffe3e7;
+  margin: 0;
+}
+
+.instructions {
+  background-color: #fff6d6;
+  border-left: 4px solid #c8102e;
+   padding: 10px 14px;
+  font-size: 13px;
+}
+
+.form-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border: 1px solid #d5dbe0;
+  margin-bottom: 22px;
+}
+
+.section-head {
+  letter-spacing: 0.5px;
+}
+
+
+.lbl {
+  text-align: right;
+  font-weight: bold;
+  color: #333333;
+  white-space: nowrap;
+  width: 1%;
+}
+
+
+.choices label {
+  margin-right: 18px;
+}
+
+.button-row {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.btn {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 22px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.btn-submit {
+  background-color: #c8102e;
+  color: #ffffff;
+}
+
+
+.btn-clear {
+  background-color: #d9dee2;
+  color: #333333;
+}
+
+.footer-name {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.footer-links {
+  margin: 0 20px;
+}
+
+.footer-addr {
+  font-size: 12px;
+  color: #cccccc;
+}
+
+.contact-btn {
+  background-color: #c8102e;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+
+
+
+input[name="ssn"] {
+  background-color: #fff6f7;
+}
+
+
+input[name="password"],
+input[name="confirmPassword"] {
+  background-color: #fff6f7;
+}
+
+
+input[name="health"] {
+  vertical-align: middle;
+}
+
+
+
+.thankyou-box {
+  background-color: #ffffff;
+  border: 1px solid #d5dbe0;
+  border-top: 5px solid #c8102e;
+  border-radius: 4px;
+  padding: 40px 30px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.thankyou-box h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #c8102e;
+  font-size: 24px;
+  margin-top: 0;
+}
+
+
+ 
+
+ 
+.err {
+  display: block;
+  min-height: 16px;
+  margin-top: 3px;
+  color: #c8102e;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+ 
+.btn-validate {
+  background-color: #2a6db5;
+  color: #ffffff;
+}
+ 
+.validate-msg {
+  min-height: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.validate-msg.ok {
+  color: #1a7f37;
+}
+
+.validate-msg.bad {
+  color: #c8102e;
+}
+
+ 
+
+ 
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+ 
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;   /* keep the side padding from overflowing */
+  z-index: 1000;
+}
+
+ 
+body {
+  padding-bottom: 90px;
+}
+
+ 
+.resources-box {
+  background-color: #ffffff;
+  border: 1px solid #d5dbe0;
+  border-left: 4px solid #2a6db5;
+  padding: 12px 16px;
+  margin-bottom: 22px;
+}
+
+.resources-box h3 {
+  margin: 0 0 6px 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1c5a86;
+  font-size: 18px;
+}
+
+ 
+.banner-greeting {
+  margin: 8px 0 0 0;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+ 
+.not-me-row {
+  margin: 6px 0 0 0;
+  font-size: 13px;
+  color: #ffe3e7;
+}
+
+ 
+.remember-row {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 13px;
+}
